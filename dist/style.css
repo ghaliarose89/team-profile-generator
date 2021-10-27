@@ -1,0 +1,21 @@
+*{
+    padding: auto;
+}
+body {
+    background-color:darkslateblue;
+    margin: 15px;
+}
+
+h1 {
+    margin-top: 7%;
+    font-size: 55px;
+    color:white;
+    text-decoration: underline;
+    text-align: center;
+}
+.cards {
+    margin-top: 10%;   
+}
+.teamrole{
+    height: 100px;
+}
