@@ -18,8 +18,8 @@ A command-line prompt the user to enter:
 * open the index file from the dir folder and team members will be displayed there.
 
 ## Usage:
-
-![video demo of Team-workprofile](https://youtu.be/B1AI34St_SQ)
+The link is a walkthrough video for the app
+https://youtu.be/B1AI34St_SQ
 
 ## Testes:
 All testes are passed 
