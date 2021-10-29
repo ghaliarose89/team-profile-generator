@@ -19,12 +19,12 @@ A command-line prompt the user to enter:
 
 ## Usage:
 
-![Gif demo of README-generator](Team-workprofile.gif)
+![Gif demo of Team-workprofile](./dist/Team-workprofile.gif)
 
 
 ### Contribution:
-Made with ❤️️ by Ghalia Sami, 
-for more information, Please contact me.
+Made with ❤️️ by Ghalia Sami. 
+For more information, Please contact me.
 Email: ghaliarose89@gmail.com
 
 ### ©️ [2021] [Ghalia Sami]
