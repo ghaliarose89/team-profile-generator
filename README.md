@@ -13,16 +13,18 @@ A command-line prompt the user to enter:
 * When the user finishes entering team information, an HTML page will be created based on the user entree.
 
 ## instructions : 
-* install the npm package then enter 'node index' 
+* Install the npm package then enter 'node index' 
 * Questions will prompt and after answering, the index.html file will be created.
 * open the index file from the dir folder and team members will be displayed there.
 
 ## Usage:
-The link is a walkthrough video for the app
+The link below is a walkthrough video for the app
+
 https://youtu.be/B1AI34St_SQ
 
 ## Testes:
 All tests are passed.
+
 ![snip](./dist/Capture.JPG)
 
 ### Contribution:
