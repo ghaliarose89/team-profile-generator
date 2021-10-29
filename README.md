@@ -19,8 +19,11 @@ A command-line prompt the user to enter:
 
 ## Usage:
 
-![Gif demo of Team-workprofile](./dist/Team-workprofile.gif)
+![video demo of Team-workprofile](https://youtu.be/B1AI34St_SQ)
 
+## Testes:
+All testes are passed 
+![snip](./dist/Capture.JPG)
 
 ### Contribution:
 Made with ❤️️ by Ghalia Sami. 
