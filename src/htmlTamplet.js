@@ -1,107 +1,76 @@
 
-const createHtml = data => {
+const createHtml = (data, roleArr) => {
+    console.log(roleArr[0].role);
 
-    //console.log(data);
 
     return `<!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>My Team</title>
+        </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>My Team</title>
-</head>
-
-<body>
-    <h1>${data[0]}</h1>
-    <div class="container">
-    <div class="row cards" >
-    ${getmember(data)}
+    <body>
+        <h1>${data[0]}</h1>
+        <div class="container">
+        <div class="row cards" >
+         ${getmember(data, roleArr)}
+    
    `
-
 };
 
-function getmember(data) {
-    console.log(data);
-    let ob;
-    
+function getmember(data, roleArr) {
+    let employyinfo = ``;
+    let j = 0;
     for (let i = 1; i < data.length; i++) {
-
-       ob= `<div class="col-sm">
+        employyinfo += `<div class="col-sm">
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-primary teamrole">${data[i].name}</li>
-                    <li class="list-group-item list-group-item-secondary">${data[i].id}</li>
-                    <li class="list-group-item list-group-item-success">${data[i].email}</li>`;
-         if (data[i].officenumber) {
-             ob += ` <li class="list-group-item list-group-item-danger">${data[i].officenumber}</li>
-                             </ul>
-                         </div>
+                    <li class="list-group-item list-group-item-primary teamrole"> ${roleArr[j].role}<p>Name: ${data[i].name}</p></li>
+                    <li class="list-group-item list-group-item-secondary otherinfo">Id: ${data[i].id}</li>
+                    <li class="list-group-item list-group-item-success otherinfo"><a href="mailto:${data[i].email}">Email:${data[i].email}</a> </li>`;
+        if (data[i].officenumber) {
+            employyinfo +=
+                ` <li class="list-group-item list-group-item-danger otherinfo">Office number: ${data[i].officenumber}</li>
+                     </ul>
+                    </div>
                     
-        ` } ; 
+        ` };
         if (data[i].github) {
-            ob += ` <li class="list-group-item list-group-item-danger">${data[i].github}</li>
-                            </ul>
-                        </div>
+            employyinfo += ` <li class="list-group-item list-group-item-danger otherinfo"> <a href="https://github.com/${data[i].github}"> 
+           Github account:${data[i].github}</a></li>
+                     </ul>
+                    </div>
+                    
                    
-       ` }  ;
-       if (data[i].school) {
-        ob += ` <li class="list-group-item list-group-item-danger">${data[i].school}</li>
+       ` };
+        if (data[i].school) {
+            employyinfo += ` <li class="list-group-item list-group-item-danger otherinfo"> School name: ${data[i].school}</li>
                         </ul>
                     </div>
+                    
+                   
                
    ` };
 
-        
-      
+        j++;
+
     };
+    employyinfo +=
+        `</div>
+   </div>
+    </div>
+    </body>
 
- return ob;
-    
-    
-}
+    </html>`;
 
-// if (data[i].officenumber) {
-//     `
-//                     <li class="list-group-item list-group-item-danger">${data[i].officenumber}</li>
-//                 </ul>
-//             </div>
-//             </div>
-//             </body>
-
-//             </html>`
-// }
-// else
-//     if (data[i].github) {
-//         `
-//             <li class="list-group-item list-group-item-danger">${data[i].github}</li>
-//             </ul>
-//             </div>
-//         </div>
-//         </body>
-
-//         </html>`
-//     }
-//     else
-//         if (data[i].school) {
-//             `
-//                 <li class="list-group-item list-group-item-danger">${data[i].school}</li>
-//              </ul>
-//                 </div>
-//                 </div>
-//             </body>
-            
-//             </html>`
-//         };
+    return employyinfo;
 
 
-//         }
-//     };
-
-
-
+};
 
 module.exports = createHtml;

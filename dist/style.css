@@ -18,4 +18,10 @@ h1 {
 }
 .teamrole{
     height: 100px;
+    font-size: x-large;
+    font-weight: bold;
+    
+}
+.otherinfo{
+    font-size: large;
 }

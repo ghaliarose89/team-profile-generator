@@ -6,7 +6,7 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const createHtml = require('./src/htmlTamplet')
 const teamArray = [];
-
+const roleArr = [];
 function teamStart() {
     inquirer.prompt([
         {
@@ -27,7 +27,6 @@ function teamStart() {
         .then(data => {
             if (data.teamTitle)
                 teamArray.push(data.teamTitle);
-            // console.log(teamArray);
             addManager();
         });
 };
@@ -63,9 +62,9 @@ function addManager() {
             const email = data.managerEmail;
             const phoneNumber = data.managerOfficeNumber;
             let manager = new Manager(name, id, email, phoneNumber);
-            teamArray.push(manager);
-           
-
+            let obj = {role : manager.getRole()}
+            roleArr.push(obj);
+            teamArray.push(manager)
             addTeamMember();
 
         });
@@ -93,7 +92,7 @@ function addTeamMember() {
                     addInten();
                     break;
                 case 'No, create my team work page now!':
-                   createPage(teamArray);
+                   createPage(teamArray,roleArr);
                    break;
                     
             }
@@ -134,7 +133,8 @@ function addEngineer() {
             const github = data.engineerGitHub;
             let engineer = new Engineer(name, id, email, github);
             teamArray.push(engineer);
-            //console.log(teamArray);
+            let obj = {role : engineer.getRole()}
+            roleArr.push(obj);
             addTeamMember();
         });
 
@@ -172,14 +172,15 @@ function addInten() {
             const email = data.internEmail;
             const school = data.internSchool;
             let intern = new Intern(name, id, email, school);
+            let obj = {role : intern.getRole()}
+            roleArr.push(obj);
             teamArray.push(intern);
-            // console.log(teamArray);
             addTeamMember();
         });
 
 };
 function createPage(data){
-    fs.writeFile ('./dist/homepage.html',createHtml(data),err =>{
+    fs.writeFile ('./dist/index.html',createHtml(data,roleArr),err =>{
         err?console.log (err): console.log("your team page has been created!");
     })
 };
