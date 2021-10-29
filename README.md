@@ -22,7 +22,7 @@ The link is a walkthrough video for the app
 https://youtu.be/B1AI34St_SQ
 
 ## Testes:
-All testes are passed 
+All tests are passed.
 ![snip](./dist/Capture.JPG)
 
 ### Contribution:
