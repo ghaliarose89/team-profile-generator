@@ -76,15 +76,12 @@ function addTeamMember() {
             type: 'list',
             name: 'addMember',
             message: 'Do you want to add more team member?',
-            choices: ['yes,add another manager', 'yes, add an Inten', 'yes,an Engineer', "No, create my team work page now!"]
+            choices: ['yes,an Engineer', 'yes, add an Inten', "No, create my team work page now!"]
 
         },
     ])
         .then(data => {
             switch (data.addMember) {
-                case 'yes,add another manager':
-                    addManager();
-                    break;
                 case 'yes,an Engineer':
                     addEngineer();
                     break;

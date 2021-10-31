@@ -1,8 +1,6 @@
 
 const createHtml = (data, roleArr) => {
-    console.log(roleArr[0].role);
-
-
+    
     return `<!DOCTYPE html>
     <html lang="en">
         <head>
