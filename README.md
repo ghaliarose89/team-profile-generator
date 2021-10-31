@@ -18,6 +18,8 @@ A command-line prompt the user to enter:
 * open the index file from the dir folder and team members will be displayed there.
 
 ## Usage:
+![snip](./dist/c2.JPG)
+
 The link below is a walkthrough video for the app
 
 https://youtu.be/B1AI34St_SQ
